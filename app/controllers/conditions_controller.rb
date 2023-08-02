@@ -1,5 +1,6 @@
 class ConditionsController < ApplicationController
   def surf
-    render json:{message: "hello"}
+    @report = Report.find_by(id: 4)
+    render template: "reports/show"
   end
 end
