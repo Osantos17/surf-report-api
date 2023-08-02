@@ -5,6 +5,8 @@ class ReportsController < ApplicationController
   end
 
   def show
-    render json: {message: "hello"}
+    p params['id']
+    @report = Report.find_by(id: params['id'])
+    render template:"reports/show"
   end
 end
